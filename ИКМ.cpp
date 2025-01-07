@@ -1,37 +1,90 @@
-ï»¿#include <iostream> 
+#include <iostream> 
 using namespace std; 
+
+// ”ã­ªæ¨ï ¤«ï ¢ëç¨á«¥­¨ï a^m
+double power(double a, int m) {
+    double result = 1;
+    // Ž¡à ¡®âª  ¯®«®¦¨â¥«ì­®© áâ¥¯¥­¨
+    if (m > 0) {
+        for (int i = 0; i < m; i++) {
+            result *= a; // “¬­®¦ î a ­  á¥¡ï m à §
+        }
+        return result;
+    }
+    // Ž¡à ¡®âª  ®âà¨æ â¥«ì­®© áâ¥¯¥­¨
+    else if (m < 0) {
+        for (int i = 0; i < -m; i++) {
+            result *= a; 
+        }
+        return 1 / result; // ‚®§¢à é î 1 / (a^m)
+    }
+    return 1; // «î¡®¥ ç¨á«® ¢ áâ¥¯¥­¨ 0 à ¢­® 1
+}
+
 int main() {
     int a, b; 
     int m, n;
 
-    // Ð¦Ð¸ÐºÐ» Ð´Ð»Ñ Ð²Ð²Ð¾Ð´Ð° a
+    // –¨ª« ¤«ï ¢¢®¤  a
     while (true) {
-        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ a (a <= 40000): ";
+        cout << "‚¢¥¤¨â¥ a (a <= 40000): ";
         cin >> a;
-        if (a >= 0 && a <= 40000) break;
-        cout << "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ a ÑÐ½Ð¾Ð²Ð°." << endl;
+        if (a <= 40000) break;
+        cout << "¥ª®àà¥ªâ­ë© ¢¢®¤. ®¦ «ã©áâ , ¢¢¥¤¨â¥ a á­®¢ ." << endl;
     }
 
-    // Ð¦Ð¸ÐºÐ» Ð´Ð»Ñ Ð²Ð²Ð¾Ð´Ð° b
+    // –¨ª« ¤«ï ¢¢®¤  b
     while (true) {
-        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ b (b <= 40000): ";
+        cout << "‚¢¥¤¨â¥ b (b <= 40000): ";
         cin >> b;
-        if (b >= 0 && b <= 40000) break;
-        cout << "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ b ÑÐ½Ð¾Ð²Ð°." << endl;
+        if (b <= 40000) break;
+        cout << "¥ª®àà¥ªâ­ë© ¢¢®¤. ®¦ «ã©áâ , ¢¢¥¤¨â¥ b á­®¢ ." << endl;
     }
 
-    // Ð¦Ð¸ÐºÐ» Ð´Ð»Ñ Ð²Ð²Ð¾Ð´Ð° m
+    // –¨ª« ¤«ï ¢¢®¤  m
     while (true) {
-        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ m (m <= 10): ";
+        cout << "‚¢¥¤¨â¥ m (m <= 10): ";
         cin >> m;
-        if (m >= 0 && m <= 10) break;
-        cout << "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ m ÑÐ½Ð¾Ð²Ð°." << endl;
+        if (m <= 10) break;
+        cout << "¥ª®àà¥ªâ­ë© ¢¢®¤. ®¦ «ã©áâ , ¢¢¥¤¨â¥ m á­®¢ ." << endl;
     }
 
-    // Ð¦Ð¸ÐºÐ» Ð´Ð»Ñ Ð²Ð²Ð¾Ð´Ð° n
+    // –¨ª« ¤«ï ¢¢®¤  n
     while (true) {
-        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ n (n <= 10): ";
+        cout << "‚¢¥¤¨â¥ n (n <= 10): ";
         cin >> n;
-        if (n >= 0 && n <= 10) break;
-        cout << "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ n ÑÐ½Ð¾Ð²Ð°." << endl;
+        if (n <= 10) break;
+        cout << "¥ª®àà¥ªâ­ë© ¢¢®¤. ®¦ «ã©áâ , ¢¢¥¤¨â¥ n á­®¢ ." << endl;
     }
+
+    //  ááç¨âë¢ î a^m ¨ b^n
+    double a_power_m = power(a, m);
+    double b_power_n = power(b, n);
+
+    if (m < 0) {
+        cout << "¥§ã«ìâ â a^m: 1/" << a << "^" << -m << " = " << a_power_m << endl;
+    }
+    else {
+        cout << "¥§ã«ìâ â a^m: " << a_power_m << endl;
+    }
+
+    if (n < 0) {
+        cout << "¥§ã«ìâ â b^n: 1/" << b << "^" << -n << " = " << b_power_n << endl;
+    }
+    else {
+        cout << "¥§ã«ìâ â b^n: " << b_power_n << endl;
+    }
+
+    // ‘à ¢­¨¢ î ¨ ¢ë¢®¦ã à¥§ã«ìâ â
+    if (a_power_m > b_power_n) {
+        cout << a_power_m << " ¡®«ìè¥ " << b_power_n << " ­  " << (a_power_m - b_power_n) << endl;
+    }
+    else if (a_power_m < b_power_n) {
+        cout << b_power_n << " ¡®«ìè¥ " << a_power_m << " ­  " << (b_power_n - a_power_m) << endl;
+    }
+    else {
+        cout << "a^m ¨ b^n à ¢­ë (" << a_power_m << ")" << endl;
+    }
+
+    return 0;
+}
