@@ -2,7 +2,7 @@
 using namespace std; 
 
 // Функция для вычисления a^m
-double power(double a, int m) {
+double power(double a, double m) {
     double result = 1;
     // Обработка положительной степени
     if (m > 0) {
@@ -22,39 +22,63 @@ double power(double a, int m) {
 }
 
 int main() {
-    int a, b; 
-    int m, n;
+    double a, b;
+    double m, n;
 
     // Цикл для ввода a
     while (true) {
         cout << "Введите a (a <= 40000): ";
         cin >> a;
-        if (a <= 40000) break;
-        cout << "Некорректный ввод. Пожалуйста, введите a снова." << endl;
+        if (cin.good() && a <= 40000) {
+            break; 
+        }
+        else {
+            cin.clear(); // Сбрасываю флаг ошибки
+            cin.ignore(10000, '\n'); // Игнорирую неправильный ввод
+            cout << "Некорректный ввод. Пожалуйста, введите a снова." << endl;
+        }
     }
 
     // Цикл для ввода b
     while (true) {
         cout << "Введите b (b <= 40000): ";
         cin >> b;
-        if (b <= 40000) break;
-        cout << "Некорректный ввод. Пожалуйста, введите b снова." << endl;
+        if (cin.good() && b <= 40000) {
+            break; 
+        }
+        else {
+            cin.clear(); 
+            cin.ignore(10000, '\n'); 
+            cout << "Некорректный ввод. Пожалуйста, введите a снова." << endl;
+        }
     }
 
     // Цикл для ввода m
     while (true) {
         cout << "Введите m (m <= 10): ";
         cin >> m;
-        if (m <= 10) break;
-        cout << "Некорректный ввод. Пожалуйста, введите m снова." << endl;
+        if (cin.good() && m <= 10) {
+            break; 
+        }
+        else {
+            cin.clear(); 
+            cin.ignore(10000, '\n'); 
+            cout << "Некорректный ввод. Пожалуйста, введите m снова." << endl;
+        }
     }
 
     // Цикл для ввода n
     while (true) {
         cout << "Введите n (n <= 10): ";
         cin >> n;
-        if (n <= 10) break;
-        cout << "Некорректный ввод. Пожалуйста, введите n снова." << endl;
+        if (cin.good() && n <= 10) {
+            break;
+        }
+        else {
+            cin.clear(); 
+            cin.ignore(10000, '\n'); 
+            cout << "Некорректный ввод. Пожалуйста, введите m снова." << endl;
+        }
     }
 
     // Рассчитываю a^m и b^n
